@@ -1,0 +1,23 @@
+<input type="text" class="form-control" placeholder="Search Here..." ng-model="userListVm.searchText">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Profile Pic</th>
+      <th ng-click="userListVm.sorter.sortBy='firstName'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">Name</th>
+      <th ng-click="userListVm.sorter.sortBy='email'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">Email</th>
+      <th ng-click="userListVm.sorter.sortBy='address.city'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">City</th>
+      <th ng-click="userListVm.sorter.sortBy='company.name'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in userListVm.users | filter:userListVm.searchText | orderBy:userListVm.sorter.sortBy: userListVm.sorter.sortOrder">
+      <td>
+        <a ng-href="#/user-detail/{{user.id}}"><img class="profile-pic" ng-src="{{user.profilePic}}" /></a>
+      </td>
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.address.city}}</td>
+      <td>{{user.company.name}}</td>
+    </tr>
+  </tbody>
+</table>

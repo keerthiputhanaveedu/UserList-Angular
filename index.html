@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/ng-template" id="heading.tmpl">
+    <p>{{123456788.6655 | currency}}</p>
+    <p>{{1470698586016 | date: 'medium'}}</p>
+    <p>{{'1234567809' | phone}}</p>
+  </script>
+</head>
+
+<body>
+
+  <header class="container">
+    <h1>User App</h1>
+    <nav>
+      <ul class="nav nav-pills">
+        <li><a href="#/user-list">User List</a></li>
+        <li><a href="#/add-user">Add User</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container" ng-view>
+
+  </section>
+
+
+  <footer class="container">
+    &copy;2017 | <a href="http://keerthiputhanaveedu.com">Keerthi Puthanaveedu</a>
+  </footer>
+
+  <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-messages.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+  <script src="plunker.module.js"></script>
+  <script src="user-list.controller.js"></script>
+  <script src="user-detail.controller.js"></script>
+  <script src="add-user.controller.js"></script>
+  <script src="user.service.js"></script>
+  <script src="phone.filter.js"></script>
+</body>
+
+</html>
